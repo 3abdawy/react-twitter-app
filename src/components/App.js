@@ -4,6 +4,7 @@ import { handleInitialData } from "../actions/shared";
 import Dashboard from "./Dashboard";
 import LoadingBar from "react-redux-loading";
 import NewTweet from "./NewTweet";
+import TweetPage from "./TweetPage";
 class App extends Component {
   componentDidMount() {
     // console.log(this.props);
@@ -14,8 +15,9 @@ class App extends Component {
     return (
       <div>
         <LoadingBar />
-        <NewTweet/>
-        {this.props.loading === true ? null : <Dashboard />}
+        {this.props.loading === true ? null : (
+          <TweetPage match={{ params: { id: "sfljgka8pfddbcer8nuxv" } }} />
+        )}
       </div>
     );
   }
